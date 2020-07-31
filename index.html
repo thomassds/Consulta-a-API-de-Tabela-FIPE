@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="pt-br">
+    <head>
+        <title>Estágio Desenvolvimento Front-end | Inovyo</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">    
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css">
+        <!-- Caso queira customizar algum estilo, insira o seu código no arquivo styles.css -->
+        <link rel="stylesheet" href="./styles.css">
+        
+    </head>
+    <body>
+        <!-- Insira o seu código aqui embaixo. Boa sorte! -->
+        <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+            <a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" href="#"><span style="margin-left: 100px;">Fipe Cars</span></a>
+            <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-toggle="collapse" data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <ul class="navbar-nav px-3">
+                <li class="nav-item text-nowrap">
+                    <a class="nav-link" href="#">Sign out</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="container-fluid">
+            <div class="row">
+              <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+                <div class="sidebar-sticky pt-3">
+                  <ul  class="nav flex-column">
+
+                    <li  class="nav-item">
+                        <h6>Marca do Veiculo</h6>
+                        <div id="Marca" class="form-group col-md-4">
+                            <select id="inputOption" class="form-control">
+                              <option selected>Selecione</option>
+                            </select>
+                        </div>
+                    </li>
+
+                    <li  class="nav-item">
+                        <h6>Modelo do Veiculo</h6>
+                        <div id="Modelo" class="form-group col-md-4">
+                            <select id="inputOption" class="form-control">
+                              <option selected>Selecione</option>
+                            </select>
+                        </div>
+                    </li>
+
+                    <li id= "value"class="nav-item">
+                        <h6>Valor do Carro 0 km</h6>
+                        <input type="text" class="form-control" id="validationDefault05" required placeholder="R$" style="margin-left: 15px;">
+                      </li>
+                  </ul>
+                </div>
+              </nav>
+          
+              <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                  <h1 class="h2">Dashboard</h1>
+                </div>
+
+                <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
+                
+                
+      <div class="table-responsive">
+        <table id="Cars" class="table table-striped table-sm">
+          <thead>
+            <tr>
+              <th>Item</th>
+              <th>Marca</th>
+              <th>Modelo</th>
+              <th>Ano</th>
+              <th>Tabela Fipe</th>
+              <th>Estado</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td id = "tableCod">1</td>
+              <td id = "tableMarca" >GM - Chevrolet</td>
+              <td id = "tableModel">Camaro ltz 3.0 - Gasolina</td>
+              <td id = "tableYear">2020</td>
+              <td id = "tableFipe">R$ 250.00</td>
+              <td id = "tableState">Fabricando</td>
+            </tr>
+            <tr>
+              <td id = "tableCod">1</td>
+              <td id = "tableMarca" >GM - Chevrolet</td>
+              <td id = "tableModel">Camaro lt 3.2 - Gasolina</td>
+              <td id = "tableYear">2019</td>
+              <td id = "tableFipe">R$ 235.00</td>
+              <td id = "tableState">Fabricando</td>
+            </tr>
+
+            <tr>
+              <td id = "tableCod">1</td>
+              <td id = "tableMarca" >GM - Chevrolet</td>
+              <td id = "tableModel">Camaro ltz 3.2 - Flex</td>
+              <td id = "tableYear">2018</td>
+              <td id = "tableFipe">R$ 199.00</td>
+              <td id = "tableState">Fabricando</td>
+            </tr>
+
+            <tr>
+              <td id = "tableCod">1</td>
+              <td id = "tableMarca" >GM - Chevrolet</td>
+              <td id = "tableModel">Camaro lz 3.2 - Gasolina</td>
+              <td id = "tableYear">2017</td>
+              <td id = "tableFipe">R$ 180.00</td>
+              <td id = "tableState">Fabricando</td>
+            </tr>
+
+            <tr>
+              <td id = "tableCod">1</td>
+              <td id = "tableMarca" >GM - Chevrolet</td>
+              <td id = "tableModel">Camaro lz 3.2 - Gasolina</td>
+              <td id = "tableYear">2016</td>
+              <td id = "tableFipe">R$ 130.00</td>
+              <td id = "tableState">Fabricando</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+               </main> 
+
+                
+        
+        
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+        <!-- Insira o seu código javascript no arquivo app.js (os endpoints da API estão listados no arquivo) -->
+
+        
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script>window.jQuery || document.write('<script src="../assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="../assets/dist/js/bootstrap.bundle.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+        <script src="dashboard.js"></script></body>
+
+
+
+        <script src="./app.js"></script>
+    </body>
+</html>
+
